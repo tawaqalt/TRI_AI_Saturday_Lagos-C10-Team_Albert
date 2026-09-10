@@ -47,7 +47,7 @@ All methods are evaluated using **nDCG@5**, comparing each method's top-5 ranked
 
 ## 🧭 Repository Structure
 ```
-C10-team-marula/
+C10-Team-Albert/
 ├── README.md
 ├── docs/
 │   ├── problem_statement.pdf
