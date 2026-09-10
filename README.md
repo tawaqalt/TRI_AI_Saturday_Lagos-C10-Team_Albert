@@ -68,7 +68,8 @@ C10-team-marula/
 
 ## 👥 Contributors
 **Team:** Albert
-**Team Lead:** [Tawakalitu Abdullahi Yusuf]
+**Team Lead:** Tawakalitu Abdullahi Yusuf
+
 **Team Members:**
 - Inameti Mercy
 
@@ -81,4 +82,3 @@ This project was developed as part of TRI AI Saturday's AI/ML cohort challenge, 
 ## 🔗 References
 - Agricultural Extension RAG: Smart Retrieval for Farmers — Kaggle Competition
 - TRI AI Saturday's AI/ML
-- Sentence Transformers
