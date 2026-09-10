@@ -68,7 +68,7 @@ C10-Team-Albert/
 
 ## 👥 Contributors
 **Team:** Albert
-**Team Lead:** Tawakalitu Abdullahi Yusuf
+**Team Lead:** https://github.com/tawaqaltTawakalitu Abdullahi Yusuf
 
 **Team Members:**
 - Inameti Mercy
