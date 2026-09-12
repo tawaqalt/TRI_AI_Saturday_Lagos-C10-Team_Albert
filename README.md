@@ -72,6 +72,7 @@ C10-Team-Albert/
 
 **Team Members:**
 - Inameti Mercy
+- Ibrahim Keji
 
 
 **Program:** TRI AI Saturday's AI/ML Cohot 10
