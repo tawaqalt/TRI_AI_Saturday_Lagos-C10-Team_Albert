@@ -74,6 +74,11 @@ C10-Team-Albert/
 - Inameti Mercy
 - Ibrahim Keji
 
+**Mentors**
+- Seun AJayi
+- Adnan  Haddy
+- Samuel Taiwo
+
 
 **Program:** TRI AI Saturday's AI/ML Cohot 10
 
