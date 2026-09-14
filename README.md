@@ -34,16 +34,21 @@ We verify our method locally before submitting: `train_queries.csv` and `qrels_t
 
 ## 4. Reproduction
 
-To reproduce our results from scratch, run the scripts in `scripts/` in the following order:
+Two notebooks are included in `scripts/`, runnable inside a Kaggle Notebook session with the competition dataset attached via the Input panel:
 
-1. `data_loading.py` — loads and validates all four dataset files.
-2. `bm25_retrieval.py` — builds the BM25 sparse index.
-3. `dense_retrieval.py` — loads the dense embedding model and encodes all documents.
-4. `hybrid_retrieval.py` — combines BM25 and dense scores, then applies cross-encoder re-ranking.
-5. `metrics.py` — computes nDCG@5 on training data to verify performance before submission.
-6. `run_hybrid_submission.py` — runs the full pipeline end-to-end and generates `submission.csv` in the format required by the competition.
+- **`scripts/baseline.ipynb`** — initial TF-IDF / BM25 baseline, establishing a score to beat.
+- **`scripts/Final_model.ipynb`** — full hybrid retrieval + cross-encoder re-ranking pipeline used for our actual competition submission.
 
-Required packages are listed in `requirements.txt`. This project was developed and must be run within a Kaggle Notebook environment, with the competition dataset attached via the Input panel.
+To reproduce our final result, run `scripts/Final_model.ipynb` top to bottom:
+
+1. **Load data** — reads `documents.csv`, `train_queries.csv`, `qrels_train.csv`, and `test_queries.csv`.
+2. **Build sparse index** — tokenises documents and builds the BM25 index.
+3. **Build dense embeddings** — loads `BAAI/bge-large-en-v1.5` and encodes all 695 documents.
+4. **Hybrid retrieval + re-ranking** — combines BM25 and dense scores per query to select the top-30 candidates, then re-ranks with `BAAI/bge-reranker-large` for the final top-5.
+5. **Local evaluation** — computes nDCG@5 on `train_queries.csv` against `qrels_train.csv` before generating test predictions.
+6. **Generate submission** — runs the pipeline on `test_queries.csv` and writes `submission.csv` in the required format (QueryId, DocumentId, top 5 per query, ranked best first).
+
+Open the notebook in a new Kaggle session, attach the competition dataset, and select Save Version → Save & Run All. Required packages (`rank-bm25`, `sentence-transformers`) are installed via a `pip install` cell at the top; other dependencies are pre-installed in the Kaggle environment.
 
 ## 5. Appendix — Contributors & Mentors
 
